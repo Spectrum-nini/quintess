@@ -1,0 +1,235 @@
+
+
+
+body{font-family: 'Exo 2', sans-serif;font-size: 16px;font-weight: 300;margin:0;padding:0;}
+
+/*limit the width that all of these items can extend to,2 mumber (topbottom,rightleft)*/
+#page{max-width: 1200px; margin:0 auto; position:relative; }
+/* Text */
+h1{font-family: 'Lobster Two', cursive; margin:0 0 1em 0; font-size: 2.8em; font-weight: 700;}
+h2{font-family: 'Lobster Two', cursive; margin:0 0 .5em 0; font-size: 1.6em; font-weight: 700;line-height: 1.1em;}
+h3{margin:0 0 .5em 0; font-size: 1.3em; font-weight: 700;}
+h4{margin:0 0 1.5em 0; font-size: 1em; font-weight: 700;}
+
+p{margin:0 0 1em 0;}
+
+a {color:#007eff;}
+a:visited{color:#b5b1ff;}
+a.btn {font-size: 1.2em; text-decoration:none;color:#fff;border:1px solid #fff;padding:4px 15px;transition:background-color .5s;}
+
+a.btn:hover{background-color: rgba(0,0,0,.8);}
+
+
+/* Header */
+header {height:430px; background:#cf0004 url(images/header.jpg)no-repeat center bottom; position: relative;}
+header .logo{
+  position: relative;
+  z-index: 1;
+  display:block;width:160px; height:66px;
+  top:20px;left:20px;
+}
+
+
+header div.logowords {position:absolute;width:42%;top:290px;left:60%;}
+header div.logowords h1{line-height:1em;margin:0 0 30px 0;color:#fff;}
+
+/*nav*/
+nav{
+  background-color: rgba(0,0,0,.65);
+  position:fixed;
+  top:0px; left:0px;/*postion itself in relation to the page element*/
+  padding: 50px 0 0 80px;
+  width:100%;
+}
+
+
+nav::after{content:'';display: block;clear:both;}
+nav ul{list-style: none;padding:0px;}
+/*list-style-take off bullet*/
+nav ul li:hover{background-color: #2b0306;}
+nav ul li:hover > ul{display:block;}
+
+nav ul li a{
+  display:inline-block;
+  color:#fff;
+  padding:10px 20px;
+  text-decoration: none;
+  width:125px;
+  position: relative;
+}
+nav ul li a:visited{color:#fff;}
+nav ul li a:hover{background-color: #6d0911;}
+nav ul ul{position: absolute;top:100%;background-color: #2b0306; display: none;}
+nav ul ul li{position: relative;}
+nav ul ul ul{left:100%; top:0px;}
+
+/*top-level*/
+nav > ul{padding-left: 200px;}
+nav > ul > li {float:left;}
+nav > ul > li > a {width:auto;padding:10px 20px 15px 20px; }
+
+/*section-welcome*/
+section.welcome{background: url(images/picture6.png )no-repeat left top; position: relative;}
+section.welcome article{ color:#a0003d; margin-top: 20px; padding:180px 20px 0 515px; min-height:220px;}
+/*we don't know how much content, in order to avoid the image be cut off,use the min-height*/
+
+section.receive aside h1{padding-top: 60px;}
+section.receive button {
+    background-color: #a0003d;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+section.receive button.signupbtn {float:left;width:50%;}
+section.receive button.cancelbtn {padding: 14px 20px;background-color: #eee9d9;color: black;float:left;width:50%}
+
+section.receive input[type=text], input[type=password] {
+    width: 100%;
+    padding: 20px 20px;
+    margin: 10px 2px;
+    display:list-item;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 30px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.picture3{
+  position: relative;
+  padding-left: 190px;
+  background-color: #eee9d9;
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+close:hover,
+close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+}
+section.receive.aside.picture3{ position:absolute; right:4%;}
+
+/*section-all*/
+section{ padding:0 30px;}
+section::after{content:'';display:block;clear:both;}
+
+/*section-main*/
+
+.house .house1{float:left;position:relative;width:100%;}
+.house .house2{float:right;position:relative;width:100%;}
+
+section .suggestions{padding-top: 40px;padding-bottom: 40px; background-color:  #a0003d;  position;relative;text-align: center;}
+section .suggestions h2 {color: #eee9d9;text-decoration: underline;}
+section .suggestions h3 {color: white;}
+
+
+section.main{margin-top: 20px;margin-bottom: 30px;padding: 0;}
+section.main aside{width:33%; float:left; text-align: center;}
+
+section.mainpart{ position:relative; }
+section.main .content{margin:15px;background:no-repeat center top; background-size: 75px 75px;padding-top:85px;}
+
+section.main aside h2 a{color: #a0003d; text-decoration: none;}
+section.main aside h2 a:hover{text-decoration:underline;}
+
+
+
+section.main aside .content.buyers{margin-top: 100px;color: #a0003d; background-image:url(images/picture7.png); width:100%;}
+section.main aside .dessert{margin-top: 130px;}
+section.main aside .content.sellers{margin-top: 100px;color: #a0003d; background-image:url(images/picture8.png); width:100%;}
+
+#panel{color:#a0003d;text-align:center; background-color:#eee9d9;border: solid 1px white;padding: 100px;display: none;}
+
+#flip{color:white;text-align: center; background-color:#a0003d;border: solid 1px white;}
+
+
+.partsideh1{margin-top: 100px;color:#a0003d;text-align: center;}
+.partsideh3{color:#a0003d;text-align: center;}
+.partsidep{color:black;text-align: center; margin:50px 130px;}
+
+
+.maptitle{border: 3px dotted #a0003d;color:#a0003d;text-align:center;text-decoration: underline;margin-top: 50px;}
+.houseform{ text-align:center; margin-top: 50px;margin-bottom: 50px;}
+/*tooltip*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: #eee9d9;
+    color: #a0003d;
+    text-align: right;
+    border-radius: 6px;
+  margin-bottom: 20px;
+    padding: 10px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 73%;
+    left: 20%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*footer*/
+footer{font-size: .8em; margin:40px;color:#999;}
+footer.content{display:inline;}
+footer a {margin-left: 30px; color:#777;}
+footer a:visited {color:#777;}
+footer a:hover{color:#000;}

@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Quintess Real Estate</title>
+		<link rel="stylesheet" type="text/css"  href="final.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type='text/javascript' src='action_page.js'>  </script>
+		<script type='text/javascript' src='suggestion.js'></script>
+		<link href="https://fonts.googleapis.com/css?family=Exo+2|Lobster+Two" rel="stylesheet">
+
+
+		<script>
+		function showHint(str) {
+		if (str.length == 0) {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+		} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+								document.getElementById("txtHint").innerHTML = this.responseText;
+						}
+				};
+				xmlhttp.open("GET", "gethint.php?q=" + str, true);
+				xmlhttp.send();
+		}
+		}
+		</script>
+
+		<script>
+		$(document).ready(function(){
+		    $("#flip").click(function(){
+		        $("#panel").slideToggle("slow");
+		    });
+		});
+		</script>
+
+		<script>
+function showUser(str) {
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET","getuser.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
+</script>
+
+	</head>
+
+<body>
+  <div id="page">
+    <header >
+				<a class="logo" title="logosign">
+					<img src="images/Quintess white.png " ></a>
+
+			  <div class="logowords">
+				   <h1> Find Your dream House</h1>
+					 <a class="btn" title= "Get advice from Janet" class="active" href="mailto:declannini@gmail.com"> Get advice from Janet</a>
+        </div>
+		</header>
+
+
+		<section class="main">
+			<section class="welcome">
+				 <article>
+					<h2 >Welcome to Quintess Real Estator</h2>
+
+
+						<p></hr>Welcome to Boston, Back Bay, Beacon Hill, Waterfront, South End, Acton, Lexington, Cambridge, Concord, Wellesley, and Weston real estate market.
+							I have a tremendous number of properties in the surrounding communities. And with my intimate knowledge of neighborhoods, trusted judgment and market trend insights,
+							many home buyers have found their dream houses. So will you.</p>
+				 </article>
+			</section>
+
+
+
+		<section class="receive">
+        <aside><div class="tooltip"><h1>Receive Quintess listing E-mail</h1>
+					         <span class="tooltiptext">Receiving the latest house information every week!</span>
+		          </div>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Subscribe E-mail</button>
+
+
+					<div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+							<form class="modal-content animate" action="../action_page.php">
+
+                <div class="container">
+	                <label><b>Email</b></label>
+	                <input type="text" placeholder="Enter Email" name="email" required>
+
+	                <label><b>Password</b></label>
+	                <input type="password" placeholder="Enter Password" name="psw" required>
+
+	                <input type="checkbox" checked="checked"> Remember me
+	                <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+	            <div class="clearfix">
+		              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		              <button type="submit" class="signupbtn">Sign Up</button>
+	            </div>
+           </div>
+        </form>
+				</div>
+    </aside>
+
+    <aside>
+	     <div class="picture3">
+			     <img src="images/picture3.png">
+		   </div>
+    </aside>
+</section >
+
+<section class="picture">
+	<div class="house">
+		<img src="images/house2.jpeg" class="house1" style="width:50%">
+		 <img src="images/house1.jpeg" class="house2" style="width:50%">
+		 <img src="images/house3.jpg" class="house1" style="width:50%">
+			<img src="images/house4.jpeg" class="house2" style="width:50%">
+	</div>
+</section >
+
+
+	<section class="search">
+
+	<div class="suggestions">
+		 <p><h2>Search for your preference in Boston area:</h2></p>
+			 <form>
+					<h3>Area: <input type="text" onkeyup="showHint(this.value)"></h3>
+			 </form>
+			<p><h3>Suggestions: <span id="txtHint"></span></h3></p>
+	</div>
+</section>
+
+
+<section class ="mainpart">
+	 <aside>
+    <div class="content buyers">
+				<h2><a href="forbuys.html">For Buyers</a></h2>
+						<p>Locating the Right Property for You</br>
+							 Getting the Best Financing</br>
+							 Price Negotiations</br>
+							 Inspections and Repairs</br>
+							 Title Insurance</br>
+							 Contract to Closing</br>   </p>
+			</div>
+  </aside>
+
+	<aside>
+			<div class="dessert">
+				 <img src="images/dessert.png">
+			</div>
+	</aside>
+
+	<aside>
+			<div class="content sellers">
+					<h2><a href="forsells.html">For Sellers</a></h2>
+					<p>Property Evaluation</br>
+						Proper List Pricing </br>
+						 Market Updates </br>
+						 Price Negotiations </br>
+						 Inspections</br>
+						 Repair Negotiations </br>
+						 Contract to Closing Process </p>
+			</div>
+
+	</aside>
+</section>
+
+<section class="addressInfo">
+<div class="content s">
+	<div id="flip">Contact Us</div>
+		<div id="panel">
+			<p>867 Boylston Street </br>
+				 5th Floor  </br>
+				 Boston </br>
+				 Massachusetts  </br>
+				 02116</br>
+		</div>
+</div>
+</section>
+
+<form class="houseform">
+<select name="users" onchange="showUser(this.value)">
+  <option value="">Select the popular area that you are interested in:</option>
+  <option value="1">Brookline</option>
+  <option value="2">Cambridge</option>
+  <option value="3">Quincy</option>
+	<option value="4">Malden</option>
+	<option value="5">Newton</option>
+  </select>
+</form>
+
+<h3 class="maptitle">Map in Boston </h3>
+
+<div id="map" style="width:100%;height:500px"></div>
+
+
+
+<script>
+function myMap() {
+	var mapCanvas = document.getElementById("map");
+	var myCenter = new google.maps.LatLng(42.348742,-71.083453);
+	var mapOptions = {center: myCenter, zoom: 5};
+ var map = new google.maps.Map(mapCanvas,mapOptions);
+ var marker = new google.maps.Marker({
+	 position: myCenter,
+	 animation: google.maps.Animation.BOUNCE
+ });
+ marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDt95QgtSRYFsc6FUvezFjT5SCufJn1flU&callback=myMap"></script>
+
+
+       <footer>
+
+						<div class="content">
+							&copy;Quintess Relaestate</br>
+						   </br>
+								<a title=" Privacy Policy" href="#">Privacy Policy</a>
+								<a title=" Terms of Service" href="#">Terms of Service</a>
+      </footer>
+
+	</div>
+
+
+</body>
+
+
+
+
+
+	<nav>
+			<ul>
+
+				 <li>
+						<a title= "Home" href="#"> Home</a>
+								<ul>
+									 <li>
+											<a title="Quintess Real Estate" href="#">Quintess Real Estate</a>
+									 </li>
+									 <li>
+										 <a title="Janet Qin" href="#">Janet Qin</a>
+									</li>
+								</ul>
+				 </li>
+
+				 <li>
+						 <a title= "For Buyers" href="#">For Buyers</a>
+								<ul>
+									<li>
+										 <a title="How i serive buyers" href="forbuys.html">How i serive buyers-------->></a>
+										 <ul>
+												<li>
+													<a title="Right Location and Best Finance" href="#">Right Location and Best Finance</a>
+												</li>
+												<li>
+													<a title="Price Negotiations" href="#">Price Negotiations</a>
+											</li>
+											<li>
+												<a title="Inspections and Repairs" href="#">Inspections and Repairs</a>
+											</li>
+											<li>
+												<a title="Insurance and Closing Contract" href="#">Insurance and Closing Contract</a>
+										</li>
+									 </ul>
+									</li>
+									<li>
+										 <a title="Mortgage Calculators" href="#">Mortgage Calculators</a>
+
+									</li>
+							 </ul>
+				 </li>
+
+				 <li>
+						 <a title= "For Sellers" href="forsells.html">For Sellers</a>
+								<ul>
+									 <li>
+										 <a title="Free Home Evaluation" href="#">Free Home Evaluation</a>
+									 </li>
+									 <li>
+										 <a title="How i serive sellers" href="#">How i serive sellers</a>
+									 </li>
+								</ul>
+				 </li>
+
+				 <li>
+						 <a title= "Contact Us" href="#">Contact Us</a>
+				 </li>
+
+		 </ul>
+	</nav>
+
+
+
+
+</html>
